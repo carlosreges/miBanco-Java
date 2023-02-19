@@ -4,6 +4,6 @@ public class TestReferencia3 {
     public static void main(String[] args) {
         Cuenta cuentaCarlos = new Cuenta();
         
-        System.out.println(cuentaCarlos.titular.nombre);
+        System.out.println(cuentaCarlos.getTitular());
     }
 }

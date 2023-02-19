@@ -9,13 +9,13 @@ public class CrearCuenta {
         //Variable          = Valor
         Cuenta primeraCuenta = new Cuenta();
         
-        primeraCuenta.saldo = 200;
+        primeraCuenta.depositar(200);
         
-        System.out.println(primeraCuenta.saldo);
+        System.out.println(primeraCuenta.getSaldo());
         
-        primeraCuenta.saldo += 100;
+        primeraCuenta.depositar(100);
         
-        System.out.println(primeraCuenta.saldo);
+        System.out.println(primeraCuenta.getSaldo());
         
     }
 }

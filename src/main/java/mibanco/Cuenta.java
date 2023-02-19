@@ -1,10 +1,24 @@
 package mibanco;
 
 public class Cuenta {
-    double saldo;
-    int agencia;
-    int numero;
-    Cliente titular = new Cliente();
+    private double saldo;
+    private int agencia;
+    private int numero;
+    private Cliente titular = new Cliente();
+    
+    public static int total = 0;
+    
+    public Cuenta(int agencia){
+        if (agencia <= 0) {
+            System.out.println("No se permiten valores menores o iguales a 0");
+            this.agencia = 1;
+        } else {
+            this.agencia = agencia;
+        }
+        total++;
+        
+        System.out.println("Se ha creado "+total+" cuenta");
+    }
 
     //No retorna valor
     public void depositar(double valor) {
@@ -30,5 +44,33 @@ public class Cuenta {
         } else {
             return false;
         }
+    }
+    
+    public double getSaldo(){
+        return this.saldo;
+    }
+    
+    public int getAgencia(){
+        return this.agencia;
+    }
+    
+    public void setNumero(int numero){
+        this.numero = numero;
+    }
+    
+    public int getNumero(){
+        return this.numero;
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+    
+    public static int getTotal(){
+        return Cuenta.total;
     }
 }
